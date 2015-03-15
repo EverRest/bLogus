@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+    <h1>Welcome to bLogus, Nickname!</h1>
+    <%= link_to 'My Blog', controller: 'posts' %>
+    <%= link_to 'Log off', destroy_user_session_path, :method => :delete %>
+<% else %>
+	<h1>Welcome, my friend!</h1>
+	<h2>My name is bLogus...and I don't remember you.</h2>
+    <h2> You want to
+    	<%= link_to 'Sign in', new_user_session_path %> or <%= link_to 'Sign up', new_user_registration_path %>
+    	?
+    </h2>
+<% end %>
+
